@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx-proxy:
+    build:
+      context: ../Assigment3
+    ports:
+      - "8080:80"
+      - "9001:9001"
+    depends_on:
+      - app-container
+  app-container:
+    build:
+        context: ../Assigment2
+    expose:
+         - "8888"
